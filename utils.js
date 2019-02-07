@@ -5,7 +5,7 @@ function random(n) {
 }
 
 function randomD(n) {
-  return 0
+  return random(n) + 1
 }
 
 function randomRolls(n, s) {

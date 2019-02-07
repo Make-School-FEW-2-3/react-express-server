@@ -24,11 +24,21 @@ app.get('/about', (req, res) => {
 })
 
 // Random number route
-// Test this route with: http://localhost:4000/random?n=99
-// Where n=99 sets the range of the random number returned
+// Test this route with: http://localhost:4000/random
+// Passing a number n in the body
+// Where the random number returned is 0 - (n - 1)
 app.get('/random', (req, res) => {
-  const { n } = req.query
-  const value = random(n)
+  const { n } = req.body
+  const value = Math.round(random(n))
+  res.json({ value })
+})
+// Random die roll route
+// Test this route with: http://localhost:4000/randomD
+// Passing a number n in the body
+// Where the random number returned is 1-n
+app.get('/randomD', (req, res) => {
+  const { n } = req.body
+  const value = Math.floor(randomD(n))
   res.json({ value })
 })
 

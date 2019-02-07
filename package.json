@@ -2,11 +2,11 @@
   "name": "react-express-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "Severiano Badajoz <sevebadajoz@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -18,5 +18,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0"
-  }
+  },
+  "repository": "git@github.com:Make-School-FEW-2-3/react-express-server.git"
 }
