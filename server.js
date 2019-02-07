@@ -23,31 +23,31 @@ app.get('/about', (req, res) => {
 });
 
 // Random number route
-// Test this route with: http://localhost:4000/random
-// Passing a number n in the body
+// Test this route with: http://localhost:4000/random/n
+// Passing a number n in the url
 // Where the random number returned is 0 - (n - 1)
-app.get('/random', (req, res) => {
-  const { n } = req.body;
+app.get('/random/:n', (req, res) => {
+  const { n } = req.params;
   const value = Math.round(random(n));
   res.json({ value });
 });
 
 // Random die roll route
-// Test this route with: http://localhost:4000/randomD
-// Passing a number n in the body
+// Test this route with: http://localhost:4000/random/die/n
+// Passing a number n in the url
 // Where the random number returned is 1-n
-app.get('/randomD', (req, res) => {
-  const { n } = req.body;
+app.get('/random/die/:n', (req, res) => {
+  const { n } = req.params;
   const value = Math.floor(randomD(n));
   res.json({ value });
 });
 
 // Random die rolls route
-// Test this route with: http://localhost:4000/randomRolls
-// Passing numbers n, t in the body
+// Test this route with: http://localhost:4000/random/dice/t/n
+// Passing numbers n, t in the url
 // Where the random number returned is 1-n and t results are returned
-app.get('/randomRolls', (req, res) => {
-  const { n, t } = req.body;
+app.get('/random/dice/:t/:n', (req, res) => {
+  const { n, t } = req.params;
 
   let values = randomRolls(t, n);
 
